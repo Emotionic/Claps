@@ -22,7 +22,7 @@ public class claps : MonoBehaviour
     {
         this.GetComponent<Text>().text = clap_count.ToString();
 
-        if (_loudness.loudness >= 3)
+        if (_loudness.loudness >= 15)
         {
             fps_count++;
         }

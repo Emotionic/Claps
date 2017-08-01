@@ -27,10 +27,10 @@ public class Microphone_input : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //lastLoudness = loudness;
-        //loudness = lastLoudness * 0.8f + GetAveragedVolume() * sensitivity * 0.2f;
+        lastLoudness = loudness;
+        loudness = lastLoudness * 0.8f + GetAveragedVolume() * sensitivity * 0.2f;
         _viewer.AddLine("L : " + loudness);
-        loudness = GetAveragedVolume() * sensitivity;
+        //loudness = GetAveragedVolume() * sensitivity;
 
     }
     float GetAveragedVolume()
