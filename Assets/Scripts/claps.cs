@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class claps : MonoBehaviour
 {
-
-    private Microphone_input _loudness;
-    public Microphone_input loudness;
+    private float x;
+    public Microphone_input _Microphone_input;
+    private Microphone_input _MyMicrophone_input;
     private int fps_count=0;
     private int clap_count=0;
 
 	// Use this for initialization
 	void Start ()
     {
-        _loudness = loudness.GetComponent<Microphone_input>();   
+        _MyMicrophone_input = _Microphone_input.GetComponent<Microphone_input>();  
 	}
 	
 	// Update is called once per frame
@@ -22,13 +22,15 @@ public class claps : MonoBehaviour
     {
         this.GetComponent<Text>().text = clap_count.ToString();
 
-        if (_loudness.loudness >= 3)
+        x = _MyMicrophone_input.DifLoudness;
+        
+        if (x >= 1.5)
         {
             fps_count++;
         }
         else
         {
-            if(1<=fps_count&&fps_count<=10)
+            if(1<=fps_count&&fps_count<=5)
             {
                 clap_count++;
 
