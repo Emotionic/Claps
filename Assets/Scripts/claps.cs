@@ -21,7 +21,7 @@ public class claps : MonoBehaviour
 	void Update ()
     {
         this.GetComponent<Text>().text = clap_count.ToString();
-
+        
         x = _MyMicrophone_input.DifLoudness;
         
         if (x >= 1.5)
